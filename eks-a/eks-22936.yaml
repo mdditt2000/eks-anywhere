@@ -24,7 +24,7 @@ spec:
   datastore: "datastore1 (3)"
   folder: "eks-anywhere"
   network: "VM Network"
-  resourcePool: "EKS-PM"
+  resourcePool: "/PME-LAB-SJC/host/EKS-PM/Resources"
   server: "vcsa-pme.lab.fp.f5net.com"
   sshUsername: capv
   template: "ubuntu-v1.20.7-eks-d-1-20-2-eks-a-0.2.0-amd64"
