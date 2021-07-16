@@ -21,9 +21,9 @@ spec:
   controlPlaneVMsMemoryMiB: 8192
   controlPlaneVMsNumCPUs: 2
   datacenter: "PME-LAB-SJC"
-  datastore: "datastore1 (3)"
-  folder: "eks-anywhere"
-  network: "VM Network"
+  datastore: "/PME-LAB-SJC/datastore/datastore1 (3)"
+  folder: "/PME-LAB-SJC/vm/eks-anywhere"
+  network: "/PME-LAB-SJC/network/VM Network"
   resourcePool: "/PME-LAB-SJC/host/EKS-PM/Resources"
   server: "vcsa-pme.lab.fp.f5net.com"
   sshUsername: capv
