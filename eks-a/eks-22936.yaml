@@ -21,7 +21,7 @@ spec:
   controlPlaneVMsMemoryMiB: 8192
   controlPlaneVMsNumCPUs: 2
   datacenter: "PME-LAB-SJC"
-  datastore: "/PME-LAB-SJC/datastore/datastore1 (3)"
+  datastore: "/PME-LAB-SJC/datastore/datastore1 (2)"
   folder: "/PME-LAB-SJC/vm/eks-anywhere"
   network: "/PME-LAB-SJC/network/VM Network"
   resourcePool: "/PME-LAB-SJC/host/EKS-PM/Resources"
