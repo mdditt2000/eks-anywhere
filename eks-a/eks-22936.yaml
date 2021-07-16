@@ -8,7 +8,7 @@ spec:
     apiVersion: anywhere.eks.amazonaws.com/v1alpha1
     kind: VSphereCluster
     name: eks-22936
-  kubernetesVersion: "1.19"
+  kubernetesVersion: "1.20"
   workerNodeReplicas: 1
 ---
 apiVersion: anywhere.eks.amazonaws.com/v1alpha1
@@ -27,7 +27,7 @@ spec:
   resourcePool: "/PME-LAB-SJC/host/EKS-PM/Resources"
   server: "vcsa-pme.lab.fp.f5net.com"
   sshUsername: capv
-  template: "ubuntu-v1.20.7-eks-d-1-20-2-eks-a-0.2.0-amd64"
+  template: "/PME-LAB-SJC/vm/Templates/ubuntu-v1.20.7-eks-d-1-20-2-eks-a-0.2.0-amd64"
   tlsInsecure: true
   tlsThumbprint: ""
   workloadDiskGiB: 25
