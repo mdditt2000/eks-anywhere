@@ -16,7 +16,7 @@ kind: VSphereCluster
 metadata:
   name: eks-27732
 spec:
-  controlPlaneDiskGiB: 25temp
+  controlPlaneDiskGiB: 25
   controlPlaneEndpointIp: "10.192.125.72"
   controlPlaneVMsMemoryMiB: 8192
   controlPlaneVMsNumCPUs: 2
