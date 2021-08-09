@@ -27,7 +27,7 @@ spec:
   resourcePool: "/PME-LAB-SJC/host/EKS-PM/Resources"
   server: "vcsa7-pme.lab.fp.f5net.com"
   sshUsername: capv
-  template: "/PME-LAB-SJC/vm/Templates/ubuntu-v1.20.7-eks-d-1-20-2-eks-a-0.2.0-amd64"
+  template: "/PME-LAB-SJC/vm/Templates/ubuntu-2004-kube-v1.20.7"
   tlsInsecure: true
   tlsThumbprint: ""
   workloadDiskGiB: 25
