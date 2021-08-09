@@ -31,6 +31,7 @@ spec:
             - "--bigip-username=$(BIGIP_USERNAME)"
             - "--bigip-password=$(BIGIP_PASSWORD)"
             - "--bigip-url=10.192.125.60"
+            - "--namespace=default"
             - "--bigip-partition=eks"
             - "--pool-member-type=nodeport"
             - "--log-level=DEBUG"
