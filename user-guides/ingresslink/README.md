@@ -211,13 +211,25 @@ NAME                                STATUS   ROLES                  AGE     VERS
 eks-cluster-85cdm                   Ready    control-plane,master   7d14h   v1.20.7-eks-1-20-2   192.168.200.26   192.168.200.26   Ubuntu 20.04.2 LTS   5.4.0-77-generic   containerd://1.4.4
 eks-cluster-md-0-6cd695b8f4-7jj5q   Ready    <none>                 7d14h   v1.20.7-eks-1-20-2   192.168.200.27   192.168.200.27   Ubuntu 20.04.2 LTS   5.4.0-77-generic   containerd://1.4.4
 
-To get coffee:
+To view the IngressLink virtual server:
 
-![coffee](https://github.com/mdditt2000/eks-anywhere/blob/main/user-guides/ingresslink/diagram/2021-08-17_12-39-25.png)
+![virtual server list](https://github.com/mdditt2000/eks-anywhere/blob/main/user-guides/ingresslink/diagram/2021-08-17_12-53-53.png)
 
-If your prefer tea:
+To view the IngressLink pool members:
 
-![tea](https://github.com/mdditt2000/eks-anywhere/blob/main/user-guides/ingresslink/diagram/2021-08-17_12-39-01.png)
+![pool members](https://github.com/mdditt2000/eks-anywhere/blob/main/user-guides/ingresslink/diagram/2021-08-17_12-54-23.png)
+
+To view the IngressLink pool:
+
+![pool list](https://github.com/mdditt2000/eks-anywhere/blob/main/user-guides/ingresslink/diagram/2021-08-17_12-54-47.png)
+
+To view the IngressLink pool members for port 443:
+
+![pool members 443](https://github.com/mdditt2000/eks-anywhere/blob/main/user-guides/ingresslink/diagram/2021-08-17_12-55-08.png)
+
+To view the IngressLink pool members for 192.168.200.26:
+
+![pool members 192.168.200.26](https://github.com/mdditt2000/eks-anywhere/blob/main/user-guides/ingresslink/diagram/2021-08-17_12-55-33.png)
 
 **Step 8**
 
