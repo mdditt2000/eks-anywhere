@@ -1,14 +1,14 @@
 # EKS-Anywhere with CIS Validation using Service Type LoadBalancer
 
-Amazon EKS Anywhere (EKS-A) is a Kubernetes installer based on and used by Amazon Elastic Kubernetes Servic (EKS) to create reliable and secure Kubernetes clusters. This user-guide is created to document and validate F5 BIG-IP and F5 CIS integration with Amazon EKS Anywhere.
+Amazon EKS Anywhere (EKS-A) is a Kubernetes installer based on and used by Amazon Elastic Kubernetes Service (EKS) to create reliable and secure Kubernetes clusters. This user-guide is created to document and validate F5 BIG-IP and F5 CIS integration with Amazon EKS Anywhere.
 
-A service of type LoadBalancer is the simplest and the fastest way to expose a service inside a Kubernetes cluster to the external world. All you need to-do is specify the service type as type=LoadBalancer in the service definition.
+A service of type LoadBalancer is the simplest and the fastest way to expose a service inside a EKS Anywhere cluster to the external world. All you need to-do is specify the service type as type=LoadBalancer in the service definition.
 
 Services of type LoadBalancer are natively supported in Kubernetes deployments. When you create a service of type LoadBalancer, Kubernetes spins up a service in integration with F5 IPAM Controller which allocates an IP address from the ip-range specified by the ipamlabel. Using CIS with services configured for type LoadBalancer, BIG-IP can load balance the incoming traffic to the Kubernetes cluster without having to create any ingress resource. CIS will manage the public IP addresses for the application using the F5 IPAM Controller. This cloud like simplification of load balancer resources could significantly reduce your operational expenses.
 
 ![diagram](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/servicetypelb/diagram/2021-04-27_10-11-10.png)
 
-Demo on YouTube [video](https://www.youtube.com/watch?v=IEAzvkRjWAE)
+Demo on YouTube [video]()
 
 Looking at the diagram and Service of type LoadBalancer, the following events occur:
 
