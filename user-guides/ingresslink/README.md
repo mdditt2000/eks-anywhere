@@ -180,10 +180,10 @@ Create a secret with an SSL certificate and a key:
     kubectl create -f cafe-secret.yaml
 
 Create an Ingress resource:
-
-    kubectl create -f cafe-ingress.yaml
-
-demo application ![repo](https://github.com/mdditt2000/eks-anywhere/tree/main/user-guides/ingresslink/ingress-example
+```
+kubectl create -f cafe-ingress.yaml
+```
+cafe application [repo](https://github.com/mdditt2000/eks-anywhere/tree/main/user-guides/ingresslink/ingress-example)
 
 **Step 6**
 
