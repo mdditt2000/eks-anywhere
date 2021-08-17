@@ -10,11 +10,11 @@ Services of type LoadBalancer are natively supported in Kubernetes deployments. 
 
 Demo on YouTube [video]()
 
-Looking at the diagram and Service of type LoadBalancer, the following events occur:
+Looking at the diagram, the following events occur:
 
-1. CIS will update the service whenever the loadBalancer IP in the service is empty.
-2. The IPAM controller assigns an IP address for the loadBalancer: ingress: object from the ip-range based on the ipamlabel specified but the annotation
-3. Once the object is updated with the IP address, CIS automatically configures BIG-IP with the External IP address as shown below
+1. CIS updates the service whenever the loadBalancer IP is empty.
+2. F5 IPAM assigns an IP address for the loadBalancer: ingress: object from the ip-range ipamlabel specified by the annotation
+3. Once the object is updated with the IP address, CIS configures BIG-IP with the External IP address as shown below
 
 #### Example of deployed service using type LoadBalancer shown in the diagram
 
@@ -239,14 +239,12 @@ Events:          <none>
 
 ## View the Service Type LoadBalancer status
 
-Use the kubectl get service command to determine the EXTERNAL-IP
+Use the kubectl get service command to determine the EXTERNAL-IP that CIS will configure BIG-IP
 
 ```
-[kube@k8s-1-19-master production]$ kubectl get service
-NAME                 TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)        AGE
-f5-demo-production   LoadBalancer   10.111.34.124   10.192.125.30   80:31141/TCP   14m
-f5-demo-test         LoadBalancer   10.96.155.107   10.192.75.113   80:30164/TCP   13m
+$ kubectl get service
+NAME         TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)        AGE
+f5-demo      LoadBalancer   10.107.224.128   192.168.15.45   80:31913/TCP   46m
 ```
-CIS will add the EXTERNAL-IP to the BIG-IP as you can see in the diagram
 
 ![diagram](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/servicetypelb/diagram/2021-04-27_14-15-10.png)
