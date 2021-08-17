@@ -1,6 +1,6 @@
 # EKS-Anywhere with CIS Validation using Service Type LoadBalancer
 
-Amazon EKS Anywhere (EKS-A) is a Kubernetes installer based on and used by Amazon Elastic Kubernetes Service (EKS) to create reliable and secure Kubernetes clusters. This user-guide is created to document and validate F5 BIG-IP and F5 CIS integration with Amazon EKS Anywhere.
+Amazon EKS Anywhere (EKS-A) is a Kubernetes installer based on and used by Amazon Elastic Kubernetes Service (EKS) to create reliable and secure Kubernetes clusters. This user-guide is created to document and validate F5 BIG-IP and F5 CIS + NGINX integration with Amazon EKS Anywhere. More information on [EKS Anywhere](https://aws.amazon.com/eks/eks-anywhere/)
 
 A service of type LoadBalancer is the simplest and the fastest way to expose a service inside a EKS Anywhere cluster to the external world. All you need to-do is specify the service type as type=LoadBalancer in the service definition.
 
@@ -16,7 +16,7 @@ Looking at the diagram and Service of type LoadBalancer, the following events oc
 2. The IPAM controller assigns an IP address for the loadBalancer: ingress: object from the ip-range based on the ipamlabel specified but the annotation
 3. Once the object is updated with the IP address, CIS automatically configures BIG-IP with the External IP address as shown below
 
-#### Example of Service type LoadBalancer shown in the diagram
+#### Example of deployed service using type LoadBalancer shown in the diagram
 
 ```
 apiVersion: v1
@@ -24,22 +24,21 @@ kind: Service
 metadata:
   annotations:
     cis.f5.com/ipamLabel: Test
-    kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{"cis.f5.com/ipamLabel":"Test"},"labels":{"app":"f5-demo"},"name":"f5-demo","namespace":"default"},"spec":{"ports":[{"name":"f5-demo","port":80,"protocol":"TCP","targetPort":80}],"selector":{"app":"f5-demo"},"sessionAffinity":"None","type":"LoadBalancer"},"status":{"loadBalancer":null}}
-  creationTimestamp: "2021-04-19T18:05:23Z"
+  creationTimestamp: "2021-08-17T23:06:41Z"
   labels:
     app: f5-demo
   name: f5-demo
   namespace: default
-  resourceVersion: "52258409"
-  selfLink: /api/v1/namespaces/default/services/f5-demo
-  uid: d8336cc3-8611-48d9-bcfc-c3521c45eef1
+  resourceVersion: "5035420"
+  uid: ba6804e3-ef55-4487-a3ea-188aa4e0b106
 spec:
-  clusterIP: 10.111.131.138
+  clusterIP: 10.107.224.128
+  clusterIPs:
+  - 10.107.224.128
   externalTrafficPolicy: Cluster
   ports:
   - name: f5-demo
-    nodePort: 31970
+    nodePort: 31913
     port: 80
     protocol: TCP
     targetPort: 80
@@ -50,27 +49,26 @@ spec:
 status:
   loadBalancer:
     ingress:
-    - ip: 10.192.75.113
-
+    - ip: 192.168.15.45
 ```
 
 ## Configuring Service Type LoadBalancer
 
 ## Prerequisites
 
-* Recommend AS3 version 3.26 [repo](https://github.com/F5Networks/f5-appsvcs-extension/releases/tag/v3.26.0)
-* CIS 2.4 [repo](https://github.com/F5Networks/k8s-bigip-ctlr/releases/tag/v2.4.0)
-* F5 IPAM Controller [repo](https://github.com/F5Networks/f5-ipam-controller/releases/tag/v0.1.2)
+* Recommend AS3 version 3.30.0 [repo](https://github.com/F5Networks/f5-appsvcs-extension/releases/tag/v3.30.0)
+* CIS 2.5.1 [repo](https://github.com/F5Networks/k8s-bigip-ctlr/releases/tag/v2.5.1)
+* F5 IPAM Controller [repo](https://github.com/F5Networks/f5-ipam-controller/releases/tag/v0.1.4)
 
 ## Setup Options for the IPAM controller
 
-CIS 2.4 provides the following options for using the F5 IPAM controller
+CIS provides the following options for using the F5 IPAM controller with EKS Anywhere
 
 * Defining the IPAM label in the service which maps to the IP-Range. In my example I am using the following 
 
-  - ip-range='{"Test":"10.192.75.113-10.192.75.116","Production":"10.192.125.30-10.192.125.50"}'
+  -  --ip-range='{"Test":"192.168.15.45-192.168.15.45"}'
 
-In CIS 2.4 the F5 IPAM Controller can:
+The F5 IPAM Controller running inside EKS Anywhere can:
 
 * Allocate IP address from static IP address pool based on the ipamlable defined in the service
 
@@ -108,7 +106,7 @@ kubectl create -f f5-cluster-deployment.yaml
 kubectl create -f customresourcedefinitions.yaml
 ```
 
-* cis-deployment [repo](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/servicetypelb/cis-deployment/f5-cluster-deployment.yaml)
+* cis-deployment [repo](https://github.com/mdditt2000/eks-anywhere/blob/main/user-guides/type-lb/cis-deployment/f5-cluster-deployment.yaml)
 * crd-schema [repo](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/servicetypelb/crd-schema/customresourcedefinitions.yaml)
 
 ## F5 IPAM Deployment Configuration
