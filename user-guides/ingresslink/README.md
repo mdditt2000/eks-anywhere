@@ -149,7 +149,6 @@ nginx-ingress-7fc84bb9-4rjwr   1/1     Running   0          6d22h
 nginx-ingress-7fc84bb9-fhbdw   1/1     Running   0          6d22h
 nginx-ingress-7fc84bb9-fp49c   1/1     Running   0          6d22h
 nginx-ingress-7fc84bb9-gc4lj   1/1     Running   0          6d22h
-$
 ```
 
 nginx-config [repo](https://github.com/mdditt2000/eks-anywhere/tree/main/user-guides/ingresslink/nginx-config)
@@ -184,7 +183,7 @@ Create an Ingress resource:
 
     kubectl create -f cafe-ingress.yaml
 
-demo application [repo](https://github.com/mdditt2000/eks-anywhere/tree/main/user-guides/ingresslink/ingress-example
+demo application ![repo](https://github.com/mdditt2000/eks-anywhere/tree/main/user-guides/ingresslink/ingress-example
 
 **Step 6**
 
