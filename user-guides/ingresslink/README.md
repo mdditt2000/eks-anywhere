@@ -204,13 +204,13 @@ As you can see, the Ingress Controller reported the BIG-IP IP address (configure
 
 ### BIG-IP Pool Members
 
-CIS is configured to use NodePort. BIG-IP pool-members will be the EKS Anywhere nodes. As this cluster has two nodes the BIG-IP pool members will be 192.168.200.26 and 192.168.200.26. When using NodePort its recommend to use node label. Node labels will only add nodes to the BIG-IP with the associated node label.
-
+CIS is configured to use NodePort. BIG-IP pool-members will be the EKS Anywhere nodes. As this cluster has two nodes the BIG-IP pool members will be 192.168.200.26 and 192.168.200.26. **Note:** When using NodePort its recommend to use node label. Node labels will only add nodes to the BIG-IP with the associated node label.
+```
 $ kubectl get nodes -o wide
 NAME                                STATUS   ROLES                  AGE     VERSION              INTERNAL-IP      EXTERNAL-IP      OS-IMAGE             KERNEL-VERSION     CONTAINER-RUNTIME
 eks-cluster-85cdm                   Ready    control-plane,master   7d14h   v1.20.7-eks-1-20-2   192.168.200.26   192.168.200.26   Ubuntu 20.04.2 LTS   5.4.0-77-generic   containerd://1.4.4
 eks-cluster-md-0-6cd695b8f4-7jj5q   Ready    <none>                 7d14h   v1.20.7-eks-1-20-2   192.168.200.27   192.168.200.27   Ubuntu 20.04.2 LTS   5.4.0-77-generic   containerd://1.4.4
-
+```
 To view the IngressLink virtual server:
 
 ![virtual server list](https://github.com/mdditt2000/eks-anywhere/blob/main/user-guides/ingresslink/diagram/2021-08-17_12-53-53.png)
