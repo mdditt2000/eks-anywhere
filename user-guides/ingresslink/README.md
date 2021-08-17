@@ -1,6 +1,6 @@
 # F5 IngressLink Deployed in EKS Anywhere
 
-Amazon EKS Anywhere (EKS-A) is a Kubernetes installer based on and used by Amazon Elastic Kubernetes Service (EKS) to create reliable and secure Kubernetes clusters. This user-guide is created to document and validate F5 BIG-IP and F5 CIS + NGINX integration with Amazon EKS Anywhere. More information on ![EKS Anywhere](https://aws.amazon.com/eks/eks-anywhere/)
+Amazon EKS Anywhere (EKS-A) is a Kubernetes installer based on and used by Amazon Elastic Kubernetes Service (EKS) to create reliable and secure Kubernetes clusters. This user-guide is created to document and validate F5 BIG-IP and F5 CIS + NGINX integration with Amazon EKS Anywhere. More information on [EKS Anywhere](https://aws.amazon.com/eks/eks-anywhere/)
 
 The F5 IngressLink is addressing modern app delivery at scale/large. IngressLink is a resource definition defined between BIG-IP and Nginx using F5 Container Ingress Service and Nginx Ingress Service. The purpose of this user guide is to documented and simply the configuration and steps required to configure Ingresslink deployed in EKS Anywhere. This user-guide wont cover deploying of EKS Anywhere
 
