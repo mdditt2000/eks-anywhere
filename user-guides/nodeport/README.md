@@ -6,7 +6,7 @@ Amazon EKS Anywhere (EKS-A) is a Kubernetes installer based on and used by Amazo
 
 NodePort is named quite literally like many other functional components within Kubernetes. It is an open port on every worker node in the cluster that has a pod for that service. When traffic is received on that open port, it directs it to a specific port on the ClusterIP for the service it is representing. In a single-node cluster this is very straight forward. In a multi-node cluster the internal routing can get more complicated. In that case its best using an F5 BIG-IP load balancer so you can spread traffic out across all the nodes and be able to handle failures a bit easier.
 
-NodePort is great, but it has a few limitations. Ports available to NodePort are in the 30,000 to 32,767 range. Source [Source](https://platform9.com/blog/understanding-kubernetes-loadbalancer-vs-nodeport-vs-ingress/)
+NodePort is great, but it has a few limitations. Ports available to NodePort are in the 30,000 to 32,767 range. [Source](https://platform9.com/blog/understanding-kubernetes-loadbalancer-vs-nodeport-vs-ingress/)
 
 ![diagram](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/servicetypelb/diagram/2021-04-27_10-11-10.png)
 
