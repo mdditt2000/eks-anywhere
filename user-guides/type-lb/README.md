@@ -247,4 +247,4 @@ NAME         TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)        AGE
 f5-demo      LoadBalancer   10.107.224.128   192.168.15.45   80:31913/TCP   46m
 ```
 
-![diagram](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/servicetypelb/diagram/2021-04-27_14-15-10.png)
+![diagram](https://github.com/mdditt2000/eks-anywhere/blob/main/user-guides/type-lb/diagrams/2021-08-18_11-01-50.png)
