@@ -47,9 +47,9 @@ kubectl create -f f5-cluster-deployment.yaml
 
 * cis-deployment [repo](https://github.com/mdditt2000/eks-anywhere/blob/main/user-guides/nodeport/cis-deployment/f5-cluster-deployment.yaml)
 
-### Step 2 Create the Service and Deployment
+### Step 2 Create the APP Service and Deployment
 
-Create the pod deployments and services for the test and production application
+Create the APP pod deployment and service
 
 ```
 kubectl create -f f5-demo-test-service.yaml
@@ -73,4 +73,4 @@ pod-deployments [repo](https://github.com/mdditt2000/eks-anywhere/tree/main/user
 
 Validate the virtual server configuration on the BIG-IP and connectivity to virtual server
 
-![diagram]()
+![diagram](https://github.com/mdditt2000/eks-anywhere/blob/main/user-guides/nodeport/diagram/2021-08-18_16-11-08.png)
