@@ -8,7 +8,7 @@ NodePort is named quite literally like many other functional components within K
 
 NodePort is great, but it has a few limitations. Ports available to NodePort are in the 30,000 to 32,767 range. [Source](https://platform9.com/blog/understanding-kubernetes-loadbalancer-vs-nodeport-vs-ingress/)
 
-![diagram](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/servicetypelb/diagram/2021-04-27_10-11-10.png)
+![diagram]())
 
 Demo on YouTube [video]()
 
@@ -36,15 +36,16 @@ args:
   - "--log-as3-response=true"
 ```
 
-Deploy CIS and CRD schema
+Deploy CIS
 
 ```
+kubectl create secret generic bigip-login -n kube-system --from-literal=username=admin --from-literal=password=secret
+kubectl create serviceaccount k8s-bigip-ctlr -n kube-system
+kubectl create clusterrolebinding k8s-bigip-ctlr-clusteradmin --clusterrole=cluster-admin --serviceaccount=kube-system:k8s-bigip-ctlr
 kubectl create -f f5-cluster-deployment.yaml
-kubectl create -f customresourcedefinitions.yaml
 ```
 
-* cis-deployment [repo](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/servicetypelb/cis-deployment/f5-cluster-deployment.yaml)
-* crd-schema [repo](https://github.com/mdditt2000/k8s-bigip-ctlr/blob/main/user_guides/servicetypelb/crd-schema/customresourcedefinitions.yaml)
+* cis-deployment [repo](https://github.com/mdditt2000/eks-anywhere/blob/main/user-guides/nodeport/cis-deployment/f5-cluster-deployment.yaml)
 
 ### Step 2 Create the Service and Deployment
 
@@ -56,3 +57,14 @@ kubectl create -f f5-demo-production-service.yaml
 ```
 
 pod-deployments [repo](https://github.com/mdditt2000/k8s-bigip-ctlr/tree/main/user_guides/servicetypelb/pod-deployment)
+
+### Step 3 Create the CRD and Schema
+
+Create the CRD to schema to configure BIG-IP with the public IP address to Ingress traffic into the EKS Anywhere cluster
+
+```
+kubectl create -f customresourcedefinitions.yaml
+kubectl create -f vs-myapp.yaml
+```
+
+pod-deployments [repo](https://github.com/mdditt2000/eks-anywhere/tree/main/user-guides/nodeport/crd-example)
