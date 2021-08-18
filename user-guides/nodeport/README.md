@@ -8,7 +8,7 @@ NodePort is named quite literally like many other functional components within K
 
 NodePort is great, but it has a few limitations. Ports available to NodePort are in the 30,000 to 32,767 range. [Source](https://platform9.com/blog/understanding-kubernetes-loadbalancer-vs-nodeport-vs-ingress/)
 
-![diagram]())
+![diagram](https://github.com/mdditt2000/eks-anywhere/blob/main/user-guides/nodeport/diagram/2021-08-18_16-06-49.png)
 
 Demo on YouTube [video]()
 
@@ -68,3 +68,9 @@ kubectl create -f vs-myapp.yaml
 ```
 
 pod-deployments [repo](https://github.com/mdditt2000/eks-anywhere/tree/main/user-guides/nodeport/crd-example)
+
+### Step 4 Validate virtual server connectivity 
+
+Validate the virtual server configuration on the BIG-IP and connectivity to virtual server
+
+![diagram]()
